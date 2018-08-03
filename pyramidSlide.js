@@ -5,20 +5,31 @@
  * Determines the current value that the user has typed in the 'How high?' text-box,
  * and then draws a pyramid with that height.
  */
+
+// Add sliders
+var slider = document.getElementById("myRange");
+var output = document.getElementById("pyramidHeight");
+output.innerHTML = slider.value; 
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    determineHeightAndThenDrawPyramid();
+}
+
 function determineHeightAndThenDrawPyramid() {
 
-    // just so we know we're here
-    console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
-
-    // TODO 3
     // figure out the height the user typed (replace the "5" below)
-    var input = document.querySelector("#height");
-    heightStr = input.value;
+    // var input = document.querySelector("#height");
+    // heightStr = input.value;
+
+    // replace the above document.querySelector('#height'); with the slider input
+    //var output = document.getElementById("#pyramidHeight");
+    heightStr = slider.value;
 
     // here we convert the string to an int
     height = parseInt(heightStr);
 
-    // TODO 2
     // draw the pyramid with the given height
     drawPyramid(height);
     console.log("you should have successfully drawn a pyramid")
@@ -26,14 +37,7 @@ function determineHeightAndThenDrawPyramid() {
 
 }
 
-
-// TODO 1
-// hook up the button's click event to our determineHeightAndThenDrawPyramid function
-let button = document.getElementById('button');
-button.addEventListener("click", () =>{
-    determineHeightAndThenDrawPyramid();
-});
-
+// TODO: Add dropdown to select brick character
 
 
 
@@ -59,7 +63,7 @@ button.addEventListener("click", () =>{
          // build up a string for this row
          var rowStr = "";
          for (var i = 0; i < numSpaces; i++) {
-             rowStr += ".";
+             rowStr += String.fromCharCode(160);
          }
          for (var i = 0; i < numBricks; i++) {
              rowStr += "#";
@@ -76,10 +80,3 @@ button.addEventListener("click", () =>{
         document.getElementById("pyramid").appendChild(rowElem);
     }
 }
-
-
-// TODO 3 Add sliders
-
-// TODO 4 Listen to sliders
-
-// TODO 5 Style!!!

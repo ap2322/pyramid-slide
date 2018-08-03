@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #pyramid {
-            line-height: 0;
-            font-size: 30px;
-        }
-
-        body {
-            font-family: "Courier New", monospace;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="PSstyle.css">    
 </head>
 <body >
     <h1>Pyramid Slide</h1>
@@ -24,11 +14,11 @@
 
     <br>
 
-    <label>How high?</label>
-    <input type="text" id="height"/>
     <br><br>
-    <button id= "button">Draw a pyramid</button>
-
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="100" class="slider" id="myRange">
+        <p>How high? <span id="pyramidHeight"></span></p>
+    </div>
     <br><br>
 
     <div id="pyramid"></div>
