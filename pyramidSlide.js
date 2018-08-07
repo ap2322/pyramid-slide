@@ -17,6 +17,7 @@ slider.oninput = function() {
     determineHeightAndThenDrawPyramid();
 }
 
+
 function determineHeightAndThenDrawPyramid() {
 
     // figure out the height the user typed (replace the "5" below)
@@ -37,11 +38,6 @@ function determineHeightAndThenDrawPyramid() {
 
 }
 
-// TODO: Add dropdown to select brick character
-
-
-
-
 /**
  * drawPyramid
  *
@@ -52,6 +48,7 @@ function determineHeightAndThenDrawPyramid() {
      // TODO 4
      // before drawing, clear the old content
      document.getElementById("pyramid").innerHTML = '';
+     var brickCharacter = document.getElementById("brickCharacter").value;
 
      // for each row....
      for (var row = 0; row < height; row++) {
@@ -66,7 +63,7 @@ function determineHeightAndThenDrawPyramid() {
              rowStr += String.fromCharCode(160);
          }
          for (var i = 0; i < numBricks; i++) {
-             rowStr += "#";
+             rowStr += brickCharacter;
          }
 
         // create a text element with the string of characters
