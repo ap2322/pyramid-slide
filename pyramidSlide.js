@@ -9,10 +9,23 @@
 // Add sliders
 var slider = document.getElementById("myRange");
 var output = document.getElementById("pyramidHeight");
+var brick = document.getElementById("brickCharacter")
 output.innerHTML = slider.value; 
+
+// Load a pyramid on page load
+document.addEventListener('DOMContentLoaded', function() {
+    output.innerHTML = slider.value=5;
+    determineHeightAndThenDrawPyramid();
+}, false);
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
+    output.innerHTML = this.value;
+    determineHeightAndThenDrawPyramid();
+}
+
+// Update pyramid when brick character dropdown is updated
+brick.onchange = function(){
     output.innerHTML = this.value;
     determineHeightAndThenDrawPyramid();
 }
@@ -25,7 +38,7 @@ function determineHeightAndThenDrawPyramid() {
     // heightStr = input.value;
 
     // replace the above document.querySelector('#height'); with the slider input
-    //var output = document.getElementById("#pyramidHeight");
+    // var output = document.getElementById("#pyramidHeight");
     heightStr = slider.value;
 
     // here we convert the string to an int

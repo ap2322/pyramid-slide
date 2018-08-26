@@ -4,37 +4,35 @@
     <link rel="stylesheet" href="PSstyle.css">    
 </head>
 <body >
-    <h1>Pyramid Slide</h1>
-
-    <br>
-
-    <p>When you say</p>
-    <p><strong>Draw a pyramid</strong></p>
-    <p>I say:</p>
-
-    <br>
-
-    <br><br>
-
-
-    <div class = "pyramidtools">
-        <select id = "brickCharacter" onchange="drawPyramid()">
-            <option value="#">&#35;</option>
-            <option value="@">&#64;</option>
-            <option value="X">X</option>
-            <option value="$">&#36;</option>
-        </select>
-
-
-        <div class="slidecontainer">
-            <input type="range" min="1" max="50" value="50" class="slider" id="myRange">
-            <p>How high? <span id="pyramidHeight"></span></p>
-        </div>
+    <div class="center" id="wrapper">
+        <header>
+                <h1>Pyramid Slide</h1>
+        </header>
+        <main>
+            <p>When you say</p>
+            <p><strong>Draw a pyramid</strong></p>
+            <p>I say:</p>
+            <menu>
+            <p>Brick character
+                <select id = "brickCharacter" onchange="drawPyramid()">
+                    <option value="#">&#35;</option>
+                    <option value="@">&#64;</option>
+                    <option value="X">X</option>
+                    <option value="$">&#36;</option>
+                </select>
+    
+    
+                <span class="slidecontainer">
+                    How high?&nbsp; <span id="pyramidHeight"></span>
+                    <input type="range" min="1" max="30" value="5" class="slider" id="myRange" oninput="drawPyramid()">
+                    </p></span>
+                </span>
+            </menu>
+            <div id="pyramid">
+                <script src="pyramidSlide.js"></script>
+            </div>
+        </main>
+            
     </div>
-    <br><br>
-
-    <div id="pyramid"></div>
-
-    <script src="pyramidSlide.js"></script>
 </body>
 </html>
