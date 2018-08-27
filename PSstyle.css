@@ -3,6 +3,8 @@ body {
     text-align: center;
     width: 70%;
     margin: auto;
+    max-width: 800px; 
+    min-width: 380px; 
 }
 
 h1 {
@@ -54,14 +56,14 @@ menu{
     appearance: none;
     width: 15px; /* Set a specific slider handle width */
     height: 20px; /* Slider handle height */
-    background: #424C55; 
+    /* background: #424C55;  */
     cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
     width: 15px; /* Set a specific slider handle width */
     height: 20px; /* Slider handle height */
-    background: #424C55; /* Green background */
+    background: #424C55; 
     cursor: pointer; /* Cursor on hover */
 }
 
@@ -75,11 +77,11 @@ menu{
     background-color: #D1CCDC;
     color: white;
     border: 1px solid grey;
-    width: 80%;
+    /* width: 80%; */
   }
   
   #wrapper main {
     background-color: white;
     border: 1px solid grey;
-    width: 80%;
+    /* width: 80%; */
   }
